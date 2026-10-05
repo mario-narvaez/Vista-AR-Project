@@ -178,6 +178,10 @@ and SQL Server 2017 or later. Generate the CSVs, run the SQL scripts in order
 - [Power BI model and measures](powerbi/04_dax_measures.md)
 - [Local build evidence](docs/BUILD_LOG.md)
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
 ---
 
 **Mario Eduardo Narvaez Bernal** · Chihuahua, Mexico  

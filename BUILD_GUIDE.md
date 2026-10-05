@@ -1,6 +1,6 @@
 # VISTA — Reproduction guide
 
-The saved [Power BI report](powerbi/VISTA.pbix) contains imported data and five
+The saved [Power BI report](powerbi/VISTA-Power_BI_Report.pbix) contains imported data and five
 report pages. Open it in Power BI Desktop to explore the report. The steps below
 load the included CSVs into SQL Server and refresh the model. Python is needed
 only for optional data regeneration.
@@ -61,7 +61,7 @@ tolerance.
 
 ## 3. Refresh Power BI
 
-Open [VISTA.pbix](powerbi/VISTA.pbix). In **Data source settings**, change the SQL
+Open [VISTA-Power_BI_Report.pbix](powerbi/VISTA-Power_BI_Report.pbix). In **Data source settings**, change the SQL
 Server connection to your local instance and `VISTA_AR`, then refresh and save.
 
 **Checkpoint:** refresh completes without errors and all five pages remain:

@@ -193,7 +193,7 @@ The report's interactions follow the available grain:
 | Page | Design decision |
 |---|---|
 | Executive | Preserve the June headline cards and company-wide DSO when selecting a month or segment in the charts |
-| Aging & Risk | Segment and analyst filter both invoice aging and customer risk; bucket selections filter invoice visuals without implying a customer-risk recalculation |
+| Aging & Risk | Segment and analyst filter both invoice aging and customer risk; aging and matrix interactions are configured to filter the risk table, while single-direction relationships keep invoice-bucket selections from recalculating customer risk |
 | Disputes | Segment and reason narrow the open cases; selecting an oldest case filters detail without changing the summary cards |
 | Team Performance | Analyst selection filters the cards and the other analyst visual within a fixed full-period aggregate |
 | Cash Application | Segment, payment dates, route and quality filter the payment context and its percentages |
@@ -204,7 +204,7 @@ deferred: the report's invoice-level view contains final balances, so a correct
 as-of selector would require historical applications or dedicated snapshots.
 
 The [model and DAX specification](../powerbi/04_dax_measures.md) defines the
-measures and relationships. The [saved PBIX](../powerbi/VISTA.pbix) contains the
+measures and relationships. The [saved PBIX](../powerbi/VISTA-Power_BI_Report.pbix) contains the
 completed five-page report.
 
 ## Findings from the completed build

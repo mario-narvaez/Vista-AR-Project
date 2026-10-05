@@ -3,9 +3,15 @@
 Receivables analytics for a multi-segment optical distributor, built with
 **Python → SQL Server → Power BI** on a seeded, synthetic 18-month AR book.
 
+[View report PDF](powerbi/VISTA-Power_BI_Report_PDF.pdf) · [Watch report walkthrough](https://mario-narvaez.github.io/Vista-AR-Project/) · [Download Power BI report](powerbi/VISTA-Power_BI_Report.pbix)
+
+The PDF shows all five report pages. The one-minute walkthrough demonstrates
+navigation and filtering in the browser. The PBIX requires **Power BI Desktop**.
+All three present the same synthetic AR scenario.
+
 ![VISTA Executive dashboard](screenshots/powerbi/01-executive.png)
 
-[GitHub repository](https://github.com/mario-narvaez/Vista-AR-Project) · [Power BI report](powerbi/VISTA.pbix) · [Findings](#findings) · [Validation evidence](#validation-evidence)
+[GitHub repository](https://github.com/mario-narvaez/Vista-AR-Project) · [Findings](#findings) · [Validation evidence](#validation-evidence)
 
 VISTA answers the three questions a collections manager needs on Monday
 morning:
@@ -59,7 +65,9 @@ assisted review and manual research make up the **39.9%** human-review share.
 | [SQL loader](sql/02_load.sql) | Loads CSVs through staging tables and validates row counts. | [Execution guide](BUILD_GUIDE.md) |
 | [Analytical views](sql/03_views.sql) | Produces the current-book, risk, DSO, disputes, team and cash-application layers. | [View map](#analytical-views) |
 | [SQL verification](sql/04_verify.sql) | Produces the figures and result grids used to validate the build. | [Execution guide](BUILD_GUIDE.md) |
-| [Power BI report](powerbi/VISTA.pbix) | Contains the saved five-page report and imported semantic model. | [Model and DAX](powerbi/04_dax_measures.md) |
+| [Power BI report](powerbi/VISTA-Power_BI_Report.pbix) | Saved five-page report and imported semantic model; requires Power BI Desktop. | [Model and DAX](powerbi/04_dax_measures.md) |
+| [Report PDF](powerbi/VISTA-Power_BI_Report_PDF.pdf) | Static export of all five report pages, viewable without Power BI. | [Dashboard screenshots](#dashboard) |
+| [Report walkthrough](https://mario-narvaez.github.io/Vista-AR-Project/) | One-minute recording of page navigation and filtering, playable in the browser. | [Download MP4](powerbi/VISTA-Power_BI_Report_Walkthrough.mp4) |
 | [Power BI model and DAX](powerbi/04_dax_measures.md) | Defines the model, relationships, measures and five report pages. | [Execution guide](BUILD_GUIDE.md) |
 | [Build log](docs/BUILD_LOG.md) | Records selected evidence of local execution and validation, without a screenshot for every click. | [Execution guide](BUILD_GUIDE.md) |
 
@@ -145,7 +153,7 @@ the successful read-only rerun of all ten blocks on **5 October 2026**.
 
 ## Run locally
 
-Open [VISTA.pbix](powerbi/VISTA.pbix) in Power BI Desktop to explore the saved
+Open [VISTA-Power_BI_Report.pbix](powerbi/VISTA-Power_BI_Report.pbix) in Power BI Desktop to explore the saved
 report with its imported data. The source [CSVs](data/) are also included for
 inspection and direct use.
 

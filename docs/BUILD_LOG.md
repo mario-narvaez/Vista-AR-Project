@@ -130,7 +130,11 @@ analyst activity and cash-application routes into five analytical pages.
 
 ![Cash application dashboard](../screenshots/powerbi/05-cash-application.png)
 
-[Saved Power BI report](../powerbi/VISTA.pbix)
+| Deliverable | Purpose |
+|---|---|
+| [Saved Power BI report](../powerbi/VISTA-Power_BI_Report.pbix) | Five-page report and imported model for exploration in Power BI Desktop. |
+| [Report PDF](../powerbi/VISTA-Power_BI_Report_PDF.pdf) | Static export of the five report pages. |
+| [Report walkthrough](https://mario-narvaez.github.io/Vista-AR-Project/) · [MP4 recording](../powerbi/VISTA-Power_BI_Report_Walkthrough.mp4) | One-minute demonstration of page navigation and visual filtering. |
 
 ## 6. Interaction design and local QA
 
@@ -141,7 +145,7 @@ Interactions were designed for each page's purpose and model grain.
 | Page | Interaction design |
 |---|---|
 | Executive | Month and segment selections leave the headline cards and other chart unchanged, preserving the June close and company-wide DSO scope. |
-| Aging & Risk | Segment and Analyst filter aging, matrix and risk. Aging chart and matrix filter each other; bucket selections do not filter the customer-level risk table. Risk-table selections leave other visuals unchanged. |
+| Aging & Risk | Segment and Analyst filter aging, matrix and risk. Aging chart and matrix are configured to filter each other and the risk table. Invoice-bucket filters do not propagate back through the single-direction customer relationships; customer risk scores remain fixed. Risk-table selections leave other visuals unchanged. |
 | Disputes | Segment filters all data visuals. Reason selection filters cards, oldest cases and detail; selecting a case filters only detail. Detail selections leave other visuals unchanged. OPEN and Top 10 filters remain in place. |
 | Team Performance | Analyst selection in either chart or table filters both cards and the other visual. Clearing the selection restores the team view; the full reporting period stays fixed. |
 | Cash Application | Segment and dates filter all data visuals. Route and quality charts filter cards and each other, leaving slicers unchanged. Percentages reflect the selected payment context. |
@@ -150,8 +154,9 @@ Filtering uses **Filter**, with **None** for the destinations intended to stay
 unchanged. The static headings and takeaways retain their original text;
 Cash's **Unfiltered view** figures describe the baseline.
 
-The table records the saved interaction design. Screenshots preserve the
-unfiltered baseline; they do not display the interactive transitions.
+The table records the current saved interaction configuration. Screenshots and
+the PDF preserve the unfiltered baseline; the walkthrough demonstrates selected
+interactive transitions.
 
 On **5 October 2026**, the saved report configuration was finalized with explicit
 Filter/None rules and the unrelated dispute-filter entries removed from Team
@@ -184,9 +189,15 @@ or an AI close assistant.
 [Public GitHub repository](https://github.com/mario-narvaez/Vista-AR-Project)
 
 The public repository contains the source scripts, generated synthetic data,
-saved PBIX, public documentation and validation evidence. Its README, five
-dashboard images, SQL verification output and PBIX download were checked after
-the push.
+saved PBIX, five-page PDF export, MP4 walkthrough, public documentation and
+validation evidence. The README links to all three report formats. GitHub Pages
+hosts a browser player for the recording using the same MP4 committed in
+`powerbi/`.
+
+The PDF was checked across all five pages. The 61-second recording was decoded
+successfully and reviewed for readable report content and filtering examples.
+The current PBIX package passed its archive integrity check and contains all
+five report pages. The original SQL reconciliation evidence is retained.
 
 Private career context and the photo, the visual construction guide and layout
 mockups, report backups and temporary PDF printouts are excluded by the

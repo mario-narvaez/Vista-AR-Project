@@ -1,7 +1,7 @@
 # VISTA — Power BI model and measures
 
 This document specifies the semantic model, DAX expressions and visual bindings
-for the completed [VISTA report](VISTA.pbix). The
+for the completed [VISTA report](VISTA-Power_BI_Report.pbix). The
 [reproduction guide](../BUILD_GUIDE.md) covers setup and refresh; the
 [build log](../docs/BUILD_LOG.md) contains execution and reconciliation evidence.
 
@@ -445,10 +445,12 @@ customer's score. The [Risk Score measure](#43-customer-risk--vw_customer_risk)
 is available for measure-based customer displays and returns blank across
 multiple customers.
 
-Segment and Analyst filter all three data visuals. Aging and matrix selections
-filter each other, leaving customer risk unchanged. Risk-table selections leave
-the invoice visuals unchanged. Single-direction relationships do not propagate
-an invoice aging bucket back into the customer dimension.
+Segment and Analyst filter all three data visuals. The saved interactions
+configure the aging chart and matrix to filter each other and the risk table.
+Single-direction relationships do not propagate an invoice aging bucket back
+into the customer dimension, so this setting does not make customer risk
+bucket-specific or recalculate its stored scores. Risk-table selections leave
+the invoice visuals unchanged.
 
 ### Page 3 — Disputes
 

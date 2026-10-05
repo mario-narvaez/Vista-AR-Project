@@ -24,7 +24,7 @@ The Python generator was executed locally and produced seven CSVs.
 The generated scenario contains **$3.49B billed**, **$2.88B cash applied** and
 **$606.9M net AR** at the reporting cutoff.
 
-[Python generation evidence](../screenshots/build/00-python-generation.png)
+![Python generation output and dataset counts](../screenshots/build/00-python-generation.png)
 
 ## 2. SQL Server ingestion
 
@@ -34,7 +34,7 @@ The schema and loader were executed against `VISTA_AR`. All seven typed-table
 counts match the generated CSVs. The over-application query returned no invoices
 exceeding its **110%** tolerance threshold.
 
-[SQL load and row-count evidence](../screenshots/build/01-sql-load.png)
+![SQL load results, row counts and over-application check](../screenshots/build/01-sql-load.png)
 
 ## 3. SQL verification and report reconciliation
 
@@ -43,12 +43,28 @@ exceeding its **110%** tolerance threshold.
 The analytical views and verification script were executed. Selected result
 grids preserve the reference values used to reconcile the Power BI report.
 
-| Check | Recorded result | Evidence |
-|---|---|---|
-| Aging | Current $385.8M; 1–30 $113.3M; 31–60 $62.3M; 61–90 $14.5M; 90+ $31.5M | [SQL aging](../screenshots/sql/01-aging-profile.png) |
-| June DSO | DSO 89.2; BPDSO 57.3; opportunity gap 31.9 days | [SQL monthly trend](../screenshots/sql/02-dso-trend.png) |
-| Risk bands | HIGH 41 / $49.3M; MEDIUM 146 / $251.9M; LOW 113 / $306.2M | [SQL risk bands](../screenshots/sql/03-risk-bands.png) |
-| Payment routes | Straight-through 8,705; batch-matchable 2,897; assisted review 2,480; manual research 5,232 | [SQL cash routes](../screenshots/sql/04-cash-application.png) |
+| Check | Recorded result |
+|---|---|
+| Aging | Current $385.8M; 1–30 $113.3M; 31–60 $62.3M; 61–90 $14.5M; 90+ $31.5M |
+| June DSO | DSO 89.2; BPDSO 57.3; opportunity gap 31.9 days |
+| Risk bands | HIGH 41 / $49.3M; MEDIUM 146 / $251.9M; LOW 113 / $306.2M |
+| Payment routes | Straight-through 8,705; batch-matchable 2,897; assisted review 2,480; manual research 5,232 |
+
+**Aging profile**
+
+![SQL aging profile verification results](../screenshots/sql/01-aging-profile.png)
+
+**Monthly DSO**
+
+![SQL monthly DSO, Best Possible DSO and opportunity gap](../screenshots/sql/02-dso-trend.png)
+
+**Customer risk bands**
+
+![SQL customer counts and exposure by risk band](../screenshots/sql/03-risk-bands.png)
+
+**Cash-application routes**
+
+![SQL payment counts by cash-application route](../screenshots/sql/04-cash-application.png)
 
 Power BI displays **$607.3M gross open AR**, excluding settled invoices and
 credit balances. The generator's **$606.9M** includes credit balances.
@@ -77,8 +93,14 @@ dimensions. The invoice due-date relationship is inactive, and the full-period
 analyst aggregate is disconnected. Raw invoice and payment-application tables
 are excluded from the report model.
 
-[Model evidence](../screenshots/build/03-powerbi-model.png) ·
-[Import selection](../screenshots/build/02-powerbi-import.png) ·
+**Import selection**
+
+![Power BI import selection for dimensions and analytical views](../screenshots/build/02-powerbi-import.png)
+
+**Model relationships**
+
+![Power BI semantic model and relationships](../screenshots/build/03-powerbi-model.png)
+
 [Model and DAX specification](../powerbi/04_dax_measures.md)
 
 ## 5. Analytical report
@@ -88,13 +110,25 @@ are excluded from the report model.
 The report translates current AR, historical DSO, customer risk, disputes,
 analyst activity and cash-application routes into five analytical pages.
 
-| Page | Evidence |
-|---|---|
-| Executive | [Dashboard](../screenshots/powerbi/01-executive.png) |
-| Aging & Risk | [Dashboard](../screenshots/powerbi/02-aging-risk.png) |
-| Disputes | [Dashboard](../screenshots/powerbi/03-disputes.png) |
-| Team Performance | [Dashboard](../screenshots/powerbi/04-team-performance.png) |
-| Cash Application | [Dashboard](../screenshots/powerbi/05-cash-application.png) |
+### Executive
+
+![Executive dashboard](../screenshots/powerbi/01-executive.png)
+
+### Aging & Risk
+
+![Aging and risk dashboard](../screenshots/powerbi/02-aging-risk.png)
+
+### Disputes
+
+![Disputes dashboard](../screenshots/powerbi/03-disputes.png)
+
+### Team Performance
+
+![Team performance dashboard](../screenshots/powerbi/04-team-performance.png)
+
+### Cash Application
+
+![Cash application dashboard](../screenshots/powerbi/05-cash-application.png)
 
 [Saved Power BI report](../powerbi/VISTA.pbix)
 

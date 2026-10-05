@@ -53,7 +53,8 @@ assisted review and manual research make up the **39.9%** human-review share.
 
 | Component | What it does | Details |
 |---|---|---|
-| [Python generator](generator/generate_ar_data.py) | Creates deterministic, synthetic AR data: customers, invoices, payments, applications, disputes, activity and dates. | [Design notes](docs/PROJECT_DEEP_DIVE.md) |
+| [Synthetic CSV data](data/) | Seven included datasets, ready to inspect or load into SQL Server without running Python. | [Data design](#data-design) |
+| [Python generator](generator/generate_ar_data.py) | Optionally regenerates the seeded synthetic datasets. | [Design notes](docs/PROJECT_DEEP_DIVE.md) |
 | [SQL schema](sql/01_schema.sql) | Creates the relational model, keys, checks and indexes. | [Design notes](docs/PROJECT_DEEP_DIVE.md) |
 | [SQL loader](sql/02_load.sql) | Loads CSVs through staging tables and validates row counts. | [Execution guide](BUILD_GUIDE.md) |
 | [Analytical views](sql/03_views.sql) | Produces the current-book, risk, DSO, disputes, team and cash-application layers. | [View map](#analytical-views) |
@@ -88,8 +89,11 @@ The generator creates three intentionally different segments:
 | **RETAIL** | high transaction volume, deductions, chargebacks and pricing variance |
 | **KEY_ACCOUNT** | few large invoices, negotiated terms and concentration risk |
 
-The data is deterministic: rerunning the generator produces the same book.
-The generated data contains 300 customers, 30,965 invoices, 19,314 payments,
+All seven synthetic CSV datasets are committed in [data/](data/) so reviewers
+can inspect and use them directly. The optional generator recreates the same
+seeded scenario.
+
+The included data contains 300 customers, 30,965 invoices, 19,314 payments,
 32,184 payment applications, 1,723 disputes, 6,698 collection activities and
 636 date rows.
 
@@ -142,12 +146,17 @@ the successful read-only rerun of all ten blocks on **5 October 2026**.
 ## Run locally
 
 Open [VISTA.pbix](powerbi/VISTA.pbix) in Power BI Desktop to explore the saved
-report and imported data.
+report with its imported data. The source [CSVs](data/) are also included for
+inspection and direct use.
 
-Refreshing from source requires Python with the [listed dependencies](requirements.txt)
-and SQL Server 2017 or later. Generate the CSVs, run the SQL scripts in order
-(schema → load → views → verification), then connect the PBIX to your local
-`VISTA_AR` database and refresh. See the [execution guide](BUILD_GUIDE.md) for setup.
+To refresh from a local SQL source, use the included CSVs with SQL Server 2017
+or later. Run the scripts in order (schema → load → views → verification), then
+connect the PBIX to your local `VISTA_AR` database and refresh. The
+[execution guide](BUILD_GUIDE.md) covers the CSV location, loading and connection
+setup.
+
+Python and the [listed dependencies](requirements.txt) are needed only for
+[optional regeneration](BUILD_GUIDE.md#optional-regenerate-the-data).
 
 ## Notes and limitations
 

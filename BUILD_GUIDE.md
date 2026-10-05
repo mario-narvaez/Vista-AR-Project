@@ -2,30 +2,23 @@
 
 The saved [Power BI report](powerbi/VISTA.pbix) contains imported data and five
 report pages. Open it in Power BI Desktop to explore the report. The steps below
-recreate its SQL source and refresh the model.
+load the included CSVs into SQL Server and refresh the model. Python is needed
+only for optional data regeneration.
 
 ## Prerequisites
 
-- Windows with PowerShell and Python 3.12 or later.
+- Windows with PowerShell.
 - SQL Server 2017 or later and SQL Server Management Studio (SSMS).
 - Power BI Desktop.
 
 Run the PowerShell commands from the repository root. Use the same SQL Server
 instance in SSMS and Power BI.
 
-## 1. Prepare the data
+## 1. Use the included data
 
-The seven generated CSVs are included in `data/`. To regenerate them, create a
-virtual environment and install the [dependencies](requirements.txt):
-
-```powershell
-py -3 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe .\generator\generate_ar_data.py
-```
-
-Using the environment's executable directly avoids activation-policy changes.
-The seeded scenario has a fixed reporting cutoff of **30 June 2026**.
+The seven synthetic CSVs in [data/](data/) are committed and ready to inspect
+or load directly. Use these files for the local workflow. The seeded scenario
+has a fixed reporting cutoff of **30 June 2026**.
 
 **Expected row counts:**
 
@@ -100,6 +93,21 @@ cutoff date are classified differently.
 Check selections against the [documented page interactions](powerbi/04_dax_measures.md#6-completed-report-pages),
 then clear them to confirm the baseline returns. The [build log](docs/BUILD_LOG.md)
 contains the executed validation results and evidence.
+
+## Optional: regenerate the data
+
+To recreate the included datasets from the Python generator, use Python 3.12
+or later and install the [dependencies](requirements.txt):
+
+```powershell
+py -3 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe .\generator\generate_ar_data.py
+```
+
+Using the environment's executable directly avoids activation-policy changes.
+The generator writes the seeded datasets to `data/`. Continue with
+[SQL loading](#2-load-and-verify-sql-server) to use the regenerated files.
 
 ## Troubleshooting
 

@@ -181,5 +181,5 @@ and SQL Server 2017 or later. Generate the CSVs, run the SQL scripts in order
 ---
 
 **Mario Eduardo Narvaez Bernal** · Chihuahua, Mexico  
-MBA (Finance), Universidad Tecmilenio · B.S. Finance, UACH  
+MBA (Finance), Universidad Tecmilenio · B.A. Finance, UACH  
 [linkedin.com/in/marionarvaez](https://www.linkedin.com/in/marionarvaez/) · [GitHub](https://github.com/mario-narvaez)

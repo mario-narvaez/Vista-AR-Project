@@ -262,5 +262,5 @@ extensions are planned work:
 ---
 
 **Mario Eduardo Narvaez Bernal** · Chihuahua, Mexico  
-MBA (Finance), Universidad Tecmilenio · B.S. Finance, UACH  
+MBA (Finance), Universidad Tecmilenio · B.A. Finance, UACH  
 [linkedin.com/in/marionarvaez](https://www.linkedin.com/in/marionarvaez/)

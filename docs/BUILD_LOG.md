@@ -1,6 +1,6 @@
 # VISTA — Build log
 
-**Local implementation and report QA: complete.**
+**Local implementation, report QA and repository publication: complete.**
 
 This log records the executed Python → SQL Server → Power BI workflow,
 the saved evidence and the design decisions behind the finished report.
@@ -145,5 +145,15 @@ or an AI close assistant.
 
 ## Publication
 
-A repository URL and publication date have not yet been recorded. Local build
-completion and repository publication are separate checkpoints.
+**Published on 5 October 2026.**
+
+[Public GitHub repository](https://github.com/mario-narvaez/Vista-AR-Project)
+
+The public repository contains the source scripts, generated synthetic data,
+saved PBIX, public documentation and validation evidence. Its README, five
+dashboard images, SQL verification output and PBIX download were checked after
+the push.
+
+Private career context and the photo, the visual construction guide and layout
+mockups, report backups and temporary PDF printouts are excluded by the
+repository's ignore rules. CSV line endings are preserved by Git attributes.

@@ -5,7 +5,7 @@ Receivables analytics for a multi-segment optical distributor, built with
 
 ![VISTA Executive dashboard](screenshots/powerbi/01-executive.png)
 
-[Power BI report](powerbi/VISTA.pbix) · [Findings](#findings) · [Validation evidence](#validation-evidence)
+[GitHub repository](https://github.com/mario-narvaez/Vista-AR-Project) · [Power BI report](powerbi/VISTA.pbix) · [Findings](#findings) · [Validation evidence](#validation-evidence)
 
 VISTA answers the three questions a collections manager needs on Monday
 morning:
@@ -182,4 +182,4 @@ and SQL Server 2017 or later. Generate the CSVs, run the SQL scripts in order
 
 **Mario Eduardo Narvaez Bernal** · Chihuahua, Mexico  
 MBA (Finance), Universidad Tecmilenio · B.S. Finance, UACH  
-[linkedin.com/in/marionarvaez](https://www.linkedin.com/in/marionarvaez/)
+[linkedin.com/in/marionarvaez](https://www.linkedin.com/in/marionarvaez/) · [GitHub](https://github.com/mario-narvaez)

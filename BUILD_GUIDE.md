@@ -204,11 +204,11 @@ git commit -m "Complete VISTA AR analytics portfolio project"
 git branch -M main
 ```
 
-Create an empty GitHub repository, then replace the example remote URL with its
-actual URL and push:
+For a new publication, create an empty GitHub repository and use its remote URL.
+The published VISTA repository uses this URL:
 
 ```powershell
-git remote add origin https://github.com/YOUR_USERNAME/Vista-AR-Project.git
+git remote add origin https://github.com/mario-narvaez/Vista-AR-Project.git
 git push -u origin main
 ```
 

@@ -1,0 +1,301 @@
+customer_id,customer_name,segment,region,payment_terms_days,credit_limit,onboard_date,assigned_analyst
+C00001,MeridianLens Managed Vision Care,MANAGED_CARE,Southeast,45,1241000.0,2021-02-06,B. Quintana
+C00002,PioneerView Vision Trust,MANAGED_CARE,Midwest,45,985000.0,2021-12-11,G. Montoya
+C00003,Colorado Benefit Solutions,MANAGED_CARE,West,45,745000.0,2019-07-12,V. Cardenas
+C00004,FocusEye Vision Trust,MANAGED_CARE,Midwest,45,847000.0,2023-08-18,T. Rivas
+C00005,MeridianVision Vision Administrators,MANAGED_CARE,Midwest,45,985000.0,2023-10-17,V. Cardenas
+C00006,SummitOptics Managed Vision Care,MANAGED_CARE,Northeast,45,1346000.0,2019-01-09,P. Ibarra
+C00007,Missouri Health Benefits,MANAGED_CARE,Northeast,45,805000.0,2019-04-07,T. Rivas
+C00008,PrimeOptical Benefit Solutions,MANAGED_CARE,Midwest,45,1140000.0,2021-09-09,V. Cardenas
+C00009,BrightOptical Benefit Solutions,MANAGED_CARE,Northeast,45,1128000.0,2020-07-31,A. Reyes
+C00010,Oregon Managed Vision Care,MANAGED_CARE,Southeast,45,1363000.0,2022-10-07,F. Zamora
+C00011,FocusLens Vision Trust,MANAGED_CARE,Southwest,45,1215000.0,2023-07-17,R. Salazar
+C00012,ClearEye Managed Vision Care,MANAGED_CARE,Midwest,45,821000.0,2019-12-13,C. Fuentes
+C00013,Iowa Health Alliance,MANAGED_CARE,Northeast,45,978000.0,2022-05-08,M. Contreras
+C00014,SummitEye Managed Vision Care,MANAGED_CARE,Southwest,45,1453000.0,2019-04-27,P. Ibarra
+C00015,Iowa Care Network,MANAGED_CARE,Southeast,45,1052000.0,2020-09-28,D. Aguilar
+C00016,TrueLens Health Alliance,MANAGED_CARE,West,45,1033000.0,2020-04-06,N. Espinoza
+C00017,Colorado Health Benefits,MANAGED_CARE,Midwest,45,953000.0,2023-06-27,D. Aguilar
+C00018,OpticEye Managed Vision Care,MANAGED_CARE,Southwest,45,1157000.0,2023-08-25,B. Quintana
+C00019,ClearView Vision Administrators,MANAGED_CARE,Midwest,45,1079000.0,2020-12-29,C. Fuentes
+C00020,Utah Benefit Solutions,MANAGED_CARE,Southwest,45,1038000.0,2019-01-24,A. Reyes
+C00021,LumenVision Vision Plan,MANAGED_CARE,Northeast,45,1221000.0,2019-09-28,B. Quintana
+C00022,ApexOptics Health Benefits,MANAGED_CARE,Southwest,45,724000.0,2019-01-16,P. Ibarra
+C00023,VistaEye Vision Administrators,MANAGED_CARE,West,45,1098000.0,2023-07-23,C. Fuentes
+C00024,ClearSight Care Network,MANAGED_CARE,West,45,1281000.0,2021-02-25,C. Fuentes
+C00025,FocusVision Vision Administrators,MANAGED_CARE,West,45,769000.0,2018-04-25,B. Quintana
+C00026,PrimeOptics Health Benefits,MANAGED_CARE,West,45,835000.0,2023-05-05,L. Moreno
+C00027,FocusLens Benefit Solutions,MANAGED_CARE,West,45,808000.0,2023-02-12,L. Moreno
+C00028,Colorado Vision Administrators,MANAGED_CARE,Midwest,45,1238000.0,2018-10-22,G. Montoya
+C00029,VistaView Managed Vision Care,MANAGED_CARE,West,45,1421000.0,2023-10-12,C. Fuentes
+C00030,PioneerVision Care Network,MANAGED_CARE,Southeast,45,715000.0,2018-12-19,M. Contreras
+C00031,Arizona Care Network,MANAGED_CARE,Midwest,45,1161000.0,2021-07-02,N. Espinoza
+C00032,Nebraska Vision Administrators,MANAGED_CARE,Southeast,45,1318000.0,2019-06-25,N. Espinoza
+C00033,Ohio Managed Vision Care,MANAGED_CARE,Midwest,45,1205000.0,2022-12-29,L. Moreno
+C00034,PrimeOptics Vision Plan,MANAGED_CARE,West,45,747000.0,2019-01-28,L. Moreno
+C00035,FocusEye Health Benefits,MANAGED_CARE,Midwest,45,918000.0,2024-07-13,V. Cardenas
+C00036,Arizona Managed Vision Care,MANAGED_CARE,Midwest,45,1228000.0,2017-12-28,C. Fuentes
+C00037,PioneerView Managed Vision Care,MANAGED_CARE,West,45,880000.0,2018-03-26,P. Ibarra
+C00038,Ohio Benefit Solutions,MANAGED_CARE,Midwest,45,775000.0,2018-05-25,V. Cardenas
+C00039,BrightSight Care Network,MANAGED_CARE,Northeast,45,1322000.0,2019-05-22,T. Rivas
+C00040,Colorado Care Network,MANAGED_CARE,Southeast,45,1057000.0,2022-12-24,S. Duarte
+C00041,Texas Managed Vision Care,MANAGED_CARE,Northeast,45,877000.0,2022-06-14,P. Ibarra
+C00042,Kansas Vision Trust,MANAGED_CARE,Southeast,45,1412000.0,2021-07-19,D. Aguilar
+C00043,TrueOptical Benefit Solutions,MANAGED_CARE,Midwest,45,1190000.0,2024-06-08,S. Duarte
+C00044,LumenView Care Network,MANAGED_CARE,Northeast,45,770000.0,2021-02-14,B. Quintana
+C00045,TrueOptical Managed Vision Care,MANAGED_CARE,Midwest,45,1307000.0,2024-01-24,S. Duarte
+C00046,Utah Benefit Solutions,MANAGED_CARE,Midwest,45,829000.0,2021-07-06,V. Cardenas
+C00047,PioneerLens Managed Vision Care,MANAGED_CARE,Northeast,45,1164000.0,2023-11-18,V. Cardenas
+C00048,Colorado Care Network,MANAGED_CARE,Northeast,45,1220000.0,2019-02-16,T. Rivas
+C00049,Utah Vision Administrators,MANAGED_CARE,Midwest,45,818000.0,2021-09-13,T. Rivas
+C00050,CrystalOptics Care Network,MANAGED_CARE,Northeast,45,1305000.0,2017-12-23,A. Reyes
+C00051,Nebraska Vision Administrators,MANAGED_CARE,Southeast,45,1193000.0,2024-06-15,V. Cardenas
+C00052,Nebraska Vision Trust,MANAGED_CARE,West,45,926000.0,2022-08-17,C. Fuentes
+C00053,Ohio Managed Vision Care,MANAGED_CARE,Southeast,45,1383000.0,2024-05-19,M. Contreras
+C00054,Montana Care Network,MANAGED_CARE,Southeast,45,718000.0,2019-05-27,G. Montoya
+C00055,TrueOptics Vision Plan,MANAGED_CARE,Southeast,45,699000.0,2020-07-24,B. Quintana
+C00056,VistaSight Vision Plan,MANAGED_CARE,Southeast,45,1322000.0,2019-12-08,G. Montoya
+C00057,Missouri Health Alliance,MANAGED_CARE,Midwest,45,1278000.0,2021-08-18,J. Villalobos
+C00058,Arizona Vision Administrators,MANAGED_CARE,Midwest,45,1250000.0,2024-04-21,M. Contreras
+C00059,HorizonLens Health Alliance,MANAGED_CARE,Northeast,45,831000.0,2023-06-06,R. Salazar
+C00060,OpticSight Health Alliance,MANAGED_CARE,Midwest,45,1143000.0,2022-08-18,P. Ibarra
+C00061,HorizonLens Care Network,MANAGED_CARE,Southeast,45,811000.0,2021-06-16,M. Contreras
+C00062,Colorado Vision Plan,MANAGED_CARE,Southwest,45,1030000.0,2018-01-29,P. Ibarra
+C00063,Georgia Benefit Solutions,MANAGED_CARE,Southwest,45,943000.0,2021-11-01,C. Fuentes
+C00064,SummitVision Benefit Solutions,MANAGED_CARE,Northeast,45,1244000.0,2022-07-12,S. Duarte
+C00065,Missouri Benefit Solutions,MANAGED_CARE,Northeast,45,977000.0,2020-11-19,F. Zamora
+C00066,Nebraska Benefit Solutions,MANAGED_CARE,Southwest,45,1321000.0,2021-04-27,A. Reyes
+C00067,BrightOptical Vision Plan,MANAGED_CARE,Northeast,45,915000.0,2022-07-18,A. Reyes
+C00068,ApexEye Vision Trust,MANAGED_CARE,Northeast,45,986000.0,2023-11-12,C. Fuentes
+C00069,CrystalLens Vision Trust,MANAGED_CARE,Northeast,45,938000.0,2022-01-16,F. Zamora
+C00070,Idaho Vision Trust,MANAGED_CARE,Midwest,45,823000.0,2018-06-05,B. Quintana
+C00071,VistaOptics Health Alliance,MANAGED_CARE,West,45,1046000.0,2019-01-02,T. Rivas
+C00072,Ohio Health Benefits,MANAGED_CARE,Northeast,45,837000.0,2023-02-04,J. Villalobos
+C00073,FocusOptical Managed Vision Care,MANAGED_CARE,Southeast,45,761000.0,2020-05-06,D. Aguilar
+C00074,MeridianEye Vision Plan,MANAGED_CARE,Southeast,45,982000.0,2018-12-10,L. Moreno
+C00075,SummitVision Benefit Solutions,MANAGED_CARE,Southwest,45,1407000.0,2022-05-13,D. Aguilar
+C00076,Iowa Vision Plan,MANAGED_CARE,Southwest,45,1413000.0,2024-08-13,R. Salazar
+C00077,Idaho Care Network,MANAGED_CARE,Midwest,45,1046000.0,2024-08-16,P. Ibarra
+C00078,PrimeEye Care Network,MANAGED_CARE,Northeast,45,1180000.0,2018-07-17,C. Fuentes
+C00079,ApexLens Vision Trust,MANAGED_CARE,Northeast,45,784000.0,2020-12-02,B. Quintana
+C00080,MeridianSight Vision Administrators,MANAGED_CARE,West,45,1269000.0,2023-11-01,L. Moreno
+C00081,Arizona Care Network,MANAGED_CARE,Southeast,45,1059000.0,2024-03-04,T. Rivas
+C00082,PioneerOptical Vision Administrators,MANAGED_CARE,Southeast,45,1339000.0,2024-04-20,R. Salazar
+C00083,Georgia Health Alliance,MANAGED_CARE,Northeast,45,1253000.0,2019-08-28,R. Salazar
+C00084,Missouri Vision Plan,MANAGED_CARE,Northeast,45,1366000.0,2018-03-19,C. Fuentes
+C00085,Nebraska Managed Vision Care,MANAGED_CARE,Midwest,45,1396000.0,2018-11-20,C. Fuentes
+C00086,Nevada Health Alliance,MANAGED_CARE,Midwest,45,1006000.0,2018-10-17,J. Villalobos
+C00087,Iowa Health Alliance,MANAGED_CARE,Northeast,45,1327000.0,2021-11-27,D. Aguilar
+C00088,BrightOptical Health Alliance,MANAGED_CARE,Southwest,45,1161000.0,2021-04-20,R. Salazar
+C00089,Colorado Vision Administrators,MANAGED_CARE,Southwest,45,709000.0,2018-09-11,R. Salazar
+C00090,OpticOptical Benefit Solutions,MANAGED_CARE,Midwest,45,918000.0,2020-11-14,L. Moreno
+C00091,Ogden Vision Centers,RETAIL,Southeast,30,439000.0,2023-01-14,L. Moreno
+C00092,Tulsa Eyewear Centers,RETAIL,Southwest,30,431000.0,2020-05-13,P. Ibarra
+C00093,Dayton Vision Centers,RETAIL,Midwest,30,506000.0,2023-06-02,J. Villalobos
+C00094,Albany Vision Stores,RETAIL,Southeast,30,416000.0,2018-04-22,B. Quintana
+C00095,ClearSight Optical Retail,RETAIL,West,30,399000.0,2024-05-09,A. Reyes
+C00096,ApexView Optical Outfitters,RETAIL,Northeast,30,325000.0,2023-02-10,P. Ibarra
+C00097,CrystalOptics Optical Group,RETAIL,West,30,415000.0,2021-11-21,P. Ibarra
+C00098,Spokane Vision Stores,RETAIL,Southeast,30,360000.0,2020-01-14,R. Salazar
+C00099,Omaha Eye Care Partners,RETAIL,West,30,401000.0,2020-07-30,A. Reyes
+C00100,Austin Eyewear Centers,RETAIL,West,30,320000.0,2023-12-04,V. Cardenas
+C00101,Fargo Optical Group,RETAIL,Midwest,30,516000.0,2022-10-08,G. Montoya
+C00102,LumenOptical Optical Outfitters,RETAIL,Southeast,30,340000.0,2018-02-06,N. Espinoza
+C00103,ApexOptical Optical Group,RETAIL,Southwest,30,501000.0,2021-03-05,P. Ibarra
+C00104,LumenView Vision Centers,RETAIL,Southwest,30,270000.0,2018-12-08,V. Cardenas
+C00105,BrightOptics Optical Group,RETAIL,Midwest,30,301000.0,2024-04-07,J. Villalobos
+C00106,Reno Eyewear Centers,RETAIL,Southwest,30,269000.0,2023-10-25,D. Aguilar
+C00107,Peoria Optical Group,RETAIL,Northeast,30,345000.0,2021-08-21,D. Aguilar
+C00108,Ogden Eyewear Collective,RETAIL,Southeast,30,269000.0,2018-09-28,G. Montoya
+C00109,Reno Optical Retail,RETAIL,Southwest,30,465000.0,2022-11-10,T. Rivas
+C00110,LumenLens Optical Outfitters,RETAIL,West,30,500000.0,2018-04-19,M. Contreras
+C00111,TrueEye Eye Care Partners,RETAIL,West,30,550000.0,2018-06-06,G. Montoya
+C00112,FocusLens Optical Outfitters,RETAIL,Northeast,30,525000.0,2024-01-27,T. Rivas
+C00113,Bend Optical Retail,RETAIL,Southeast,30,295000.0,2019-04-04,C. Fuentes
+C00114,Austin Eye Care Partners,RETAIL,West,30,555000.0,2018-05-09,F. Zamora
+C00115,FocusEye Optical Retail,RETAIL,Midwest,30,386000.0,2021-04-02,C. Fuentes
+C00116,CrystalVision Eyewear Collective,RETAIL,West,30,312000.0,2024-07-07,B. Quintana
+C00117,SummitOptical Optical Retail,RETAIL,Southeast,30,347000.0,2021-06-04,C. Fuentes
+C00118,BrightView Eyewear Centers,RETAIL,Midwest,30,549000.0,2018-09-04,M. Contreras
+C00119,FocusOptical Vision Stores,RETAIL,Southeast,30,532000.0,2022-04-07,B. Quintana
+C00120,OpticVision Optical Group,RETAIL,Midwest,30,293000.0,2021-12-10,D. Aguilar
+C00121,SummitSight Eyewear Centers,RETAIL,Southeast,30,438000.0,2018-12-02,R. Salazar
+C00122,Phoenix Eyewear Collective,RETAIL,Southwest,30,325000.0,2018-08-04,V. Cardenas
+C00123,Austin Optical Retail,RETAIL,West,30,387000.0,2018-09-16,V. Cardenas
+C00124,Laredo Vision Stores,RETAIL,Southwest,30,422000.0,2023-08-01,A. Reyes
+C00125,Bend Vision Stores,RETAIL,Midwest,30,410000.0,2019-01-26,P. Ibarra
+C00126,TrueOptics Eyewear Centers,RETAIL,Midwest,30,547000.0,2018-02-27,S. Duarte
+C00127,CrystalView Optical Group,RETAIL,Southeast,30,359000.0,2018-01-31,P. Ibarra
+C00128,VistaOptics Optical Group,RETAIL,Southeast,30,484000.0,2019-01-18,F. Zamora
+C00129,OpticVision Eyewear Centers,RETAIL,Northeast,30,449000.0,2019-01-22,S. Duarte
+C00130,FocusEye Eyewear Collective,RETAIL,West,30,559000.0,2021-12-23,P. Ibarra
+C00131,VistaEye Eye Care Partners,RETAIL,Southwest,30,538000.0,2019-10-16,P. Ibarra
+C00132,Austin Eye Care Partners,RETAIL,West,30,546000.0,2020-01-27,B. Quintana
+C00133,VistaVision Optical Outfitters,RETAIL,Northeast,30,487000.0,2020-03-12,J. Villalobos
+C00134,FocusOptical Vision Centers,RETAIL,Midwest,30,384000.0,2021-03-21,V. Cardenas
+C00135,Peoria Eye Care Partners,RETAIL,Southwest,30,385000.0,2019-01-22,M. Contreras
+C00136,Laredo Vision Centers,RETAIL,West,30,270000.0,2019-05-24,B. Quintana
+C00137,Erie Optical Group,RETAIL,West,30,346000.0,2022-10-07,V. Cardenas
+C00138,OpticLens Optical Retail,RETAIL,Northeast,30,547000.0,2022-08-02,N. Espinoza
+C00139,Spokane Eye Care Partners,RETAIL,Midwest,30,468000.0,2021-12-16,V. Cardenas
+C00140,LumenSight Optical Outfitters,RETAIL,Northeast,30,518000.0,2021-05-08,P. Ibarra
+C00141,HorizonVision Optical Outfitters,RETAIL,West,30,538000.0,2019-08-14,B. Quintana
+C00142,ApexEye Eye Care Partners,RETAIL,Southwest,30,335000.0,2022-12-04,P. Ibarra
+C00143,HorizonEye Eyewear Collective,RETAIL,West,30,520000.0,2022-05-24,P. Ibarra
+C00144,VistaEye Eyewear Collective,RETAIL,Southwest,30,298000.0,2023-05-15,B. Quintana
+C00145,Tucson Optical Outfitters,RETAIL,Southeast,30,555000.0,2018-04-21,J. Villalobos
+C00146,SummitOptics Optical Group,RETAIL,Northeast,30,297000.0,2023-08-14,P. Ibarra
+C00147,Fresno Vision Centers,RETAIL,West,30,458000.0,2021-03-03,M. Contreras
+C00148,Austin Vision Stores,RETAIL,Southwest,30,401000.0,2022-03-04,V. Cardenas
+C00149,Aurora Eyewear Collective,RETAIL,Southwest,30,508000.0,2019-08-04,V. Cardenas
+C00150,Akron Vision Stores,RETAIL,West,30,525000.0,2022-06-18,J. Villalobos
+C00151,PioneerView Optical Group,RETAIL,West,30,394000.0,2022-05-19,N. Espinoza
+C00152,ClearSight Eyewear Centers,RETAIL,Southeast,30,508000.0,2024-05-19,M. Contreras
+C00153,Dayton Vision Stores,RETAIL,Northeast,30,487000.0,2021-07-09,L. Moreno
+C00154,CrystalEye Eyewear Collective,RETAIL,Southwest,30,299000.0,2023-06-24,J. Villalobos
+C00155,TrueEye Optical Outfitters,RETAIL,Southeast,30,305000.0,2022-01-03,J. Villalobos
+C00156,Erie Eye Care Partners,RETAIL,West,30,330000.0,2022-12-19,T. Rivas
+C00157,Wichita Eyewear Collective,RETAIL,Midwest,30,475000.0,2024-05-04,F. Zamora
+C00158,HorizonVision Eye Care Partners,RETAIL,West,30,489000.0,2022-01-22,T. Rivas
+C00159,PrimeLens Optical Retail,RETAIL,Southwest,30,465000.0,2024-09-01,A. Reyes
+C00160,Boise Eyewear Collective,RETAIL,West,30,528000.0,2018-12-20,B. Quintana
+C00161,SummitEye Eye Care Partners,RETAIL,West,30,466000.0,2021-11-10,S. Duarte
+C00162,BrightView Vision Centers,RETAIL,Southeast,30,359000.0,2021-02-09,R. Salazar
+C00163,Mesa Optical Group,RETAIL,Northeast,30,528000.0,2023-12-12,A. Reyes
+C00164,BrightSight Eyewear Collective,RETAIL,West,30,488000.0,2017-11-28,P. Ibarra
+C00165,ClearLens Optical Outfitters,RETAIL,Southeast,30,435000.0,2018-01-11,L. Moreno
+C00166,SummitOptical Optical Retail,RETAIL,Southeast,30,302000.0,2023-12-22,T. Rivas
+C00167,LumenEye Eye Care Partners,RETAIL,Southeast,30,392000.0,2018-05-05,V. Cardenas
+C00168,CrystalOptics Optical Retail,RETAIL,Southwest,30,401000.0,2022-07-01,B. Quintana
+C00169,FocusVision Optical Group,RETAIL,Northeast,30,479000.0,2020-11-08,T. Rivas
+C00170,Modesto Optical Outfitters,RETAIL,Southeast,30,441000.0,2020-03-20,B. Quintana
+C00171,Peoria Optical Retail,RETAIL,Southeast,30,265000.0,2020-01-21,F. Zamora
+C00172,Albany Optical Group,RETAIL,Southeast,30,411000.0,2020-10-26,T. Rivas
+C00173,Ogden Vision Stores,RETAIL,Midwest,30,432000.0,2019-06-01,J. Villalobos
+C00174,Raleigh Eyewear Centers,RETAIL,Southeast,30,518000.0,2018-02-21,F. Zamora
+C00175,Spokane Eye Care Partners,RETAIL,Southeast,30,432000.0,2021-10-16,B. Quintana
+C00176,CrystalOptics Eyewear Collective,RETAIL,Northeast,30,513000.0,2018-09-27,A. Reyes
+C00177,ClearLens Vision Centers,RETAIL,Northeast,30,313000.0,2020-06-22,J. Villalobos
+C00178,Denver Optical Outfitters,RETAIL,Southwest,30,305000.0,2023-06-01,M. Contreras
+C00179,PrimeOptical Eye Care Partners,RETAIL,Southeast,30,288000.0,2018-09-03,N. Espinoza
+C00180,CrystalView Optical Group,RETAIL,Midwest,30,559000.0,2023-04-18,V. Cardenas
+C00181,Wichita Eyewear Centers,RETAIL,Southwest,30,542000.0,2024-04-08,A. Reyes
+C00182,Provo Eyewear Centers,RETAIL,Southeast,30,433000.0,2017-12-16,A. Reyes
+C00183,VistaSight Optical Retail,RETAIL,Southwest,30,550000.0,2020-02-06,F. Zamora
+C00184,Portland Optical Outfitters,RETAIL,Southeast,30,514000.0,2019-04-10,L. Moreno
+C00185,Albany Optical Group,RETAIL,Southeast,30,473000.0,2018-10-26,R. Salazar
+C00186,BrightView Vision Centers,RETAIL,West,30,496000.0,2019-01-02,N. Espinoza
+C00187,LumenSight Vision Stores,RETAIL,Southeast,30,329000.0,2018-10-05,B. Quintana
+C00188,FocusSight Optical Outfitters,RETAIL,West,30,322000.0,2022-11-27,D. Aguilar
+C00189,PioneerOptical Eyewear Collective,RETAIL,Northeast,30,521000.0,2023-11-30,M. Contreras
+C00190,HorizonOptics Eyewear Collective,RETAIL,Southwest,30,493000.0,2020-06-28,L. Moreno
+C00191,Tucson Eye Care Partners,RETAIL,Northeast,30,332000.0,2018-04-26,T. Rivas
+C00192,TrueLens Optical Retail,RETAIL,West,30,415000.0,2021-05-17,C. Fuentes
+C00193,SummitOptical Optical Retail,RETAIL,Midwest,30,332000.0,2018-01-05,A. Reyes
+C00194,SummitOptical Eyewear Centers,RETAIL,Southeast,30,508000.0,2021-10-08,P. Ibarra
+C00195,Fargo Vision Stores,RETAIL,Southwest,30,461000.0,2019-11-21,R. Salazar
+C00196,Wichita Optical Retail,RETAIL,Midwest,30,483000.0,2019-08-13,R. Salazar
+C00197,Portland Eyewear Centers,RETAIL,Northeast,30,530000.0,2023-12-31,B. Quintana
+C00198,CrystalVision Vision Stores,RETAIL,Midwest,30,526000.0,2018-12-31,J. Villalobos
+C00199,VistaSight Eye Care Partners,RETAIL,Southwest,30,356000.0,2019-01-17,V. Cardenas
+C00200,PrimeOptical Optical Retail,RETAIL,Northeast,30,506000.0,2022-10-18,S. Duarte
+C00201,PrimeLens Vision Stores,RETAIL,Southwest,30,336000.0,2023-06-06,L. Moreno
+C00202,MeridianVision Eyewear Collective,RETAIL,Southwest,30,334000.0,2022-03-13,C. Fuentes
+C00203,Fargo Optical Outfitters,RETAIL,Midwest,30,446000.0,2019-04-21,R. Salazar
+C00204,SummitEye Eye Care Partners,RETAIL,Northeast,30,411000.0,2020-12-04,N. Espinoza
+C00205,VistaSight Eyewear Collective,RETAIL,West,30,516000.0,2018-08-20,J. Villalobos
+C00206,FocusOptical Optical Retail,RETAIL,Northeast,30,543000.0,2022-08-31,S. Duarte
+C00207,TrueEye Optical Outfitters,RETAIL,Northeast,30,384000.0,2023-05-17,T. Rivas
+C00208,TrueOptics Optical Outfitters,RETAIL,Midwest,30,306000.0,2023-01-29,B. Quintana
+C00209,PrimeView Eye Care Partners,RETAIL,Northeast,30,392000.0,2019-06-08,D. Aguilar
+C00210,CrystalEye Eyewear Centers,RETAIL,Southwest,30,434000.0,2023-04-07,F. Zamora
+C00211,PioneerView Eye Care Partners,RETAIL,West,30,486000.0,2023-05-08,D. Aguilar
+C00212,Mesa Optical Retail,RETAIL,Northeast,30,469000.0,2020-03-30,P. Ibarra
+C00213,OpticOptical Eyewear Centers,RETAIL,Northeast,30,293000.0,2023-07-01,J. Villalobos
+C00214,TrueOptical Optical Group,RETAIL,Southeast,30,502000.0,2023-11-14,S. Duarte
+C00215,Spokane Eye Care Partners,RETAIL,Southwest,30,331000.0,2024-06-08,M. Contreras
+C00216,Tucson Optical Group,RETAIL,Southwest,30,536000.0,2024-03-08,S. Duarte
+C00217,Albany Vision Stores,RETAIL,West,30,448000.0,2019-05-17,J. Villalobos
+C00218,OpticView Optical Outfitters,RETAIL,West,30,421000.0,2019-08-03,N. Espinoza
+C00219,FocusVision Optical Retail,RETAIL,Southeast,30,414000.0,2019-05-02,B. Quintana
+C00220,Peoria Vision Stores,RETAIL,Northeast,30,419000.0,2021-08-05,B. Quintana
+C00221,Tucson Optical Outfitters,RETAIL,West,30,369000.0,2017-12-23,S. Duarte
+C00222,Austin Eyewear Centers,RETAIL,Southwest,30,498000.0,2021-06-01,F. Zamora
+C00223,Boise Vision Stores,RETAIL,Southeast,30,444000.0,2024-07-05,P. Ibarra
+C00224,Omaha Optical Retail,RETAIL,Midwest,30,280000.0,2019-07-31,A. Reyes
+C00225,Erie Eyewear Centers,RETAIL,Southwest,30,487000.0,2019-08-11,T. Rivas
+C00226,Erie Eye Care Partners,RETAIL,Northeast,30,337000.0,2022-05-13,B. Quintana
+C00227,Wichita Vision Centers,RETAIL,West,30,422000.0,2020-04-29,L. Moreno
+C00228,Boise Eyewear Centers,RETAIL,Southwest,30,436000.0,2023-07-11,F. Zamora
+C00229,VistaSight Vision Stores,RETAIL,Southwest,30,291000.0,2024-04-05,B. Quintana
+C00230,PioneerOptical Vision Centers,RETAIL,Midwest,30,494000.0,2022-08-03,N. Espinoza
+C00231,Mesa Eye Care Partners,RETAIL,Midwest,30,367000.0,2019-04-08,T. Rivas
+C00232,PrimeOptical Eyewear Collective,RETAIL,Southeast,30,362000.0,2024-02-24,F. Zamora
+C00233,ApexLens Vision Centers,RETAIL,Southwest,30,534000.0,2022-09-16,R. Salazar
+C00234,Albany Optical Group,RETAIL,Northeast,30,304000.0,2020-11-16,V. Cardenas
+C00235,ClearVision Eye Care Partners,RETAIL,West,30,330000.0,2019-06-11,S. Duarte
+C00236,Denver Eyewear Collective,RETAIL,Northeast,30,404000.0,2018-05-17,F. Zamora
+C00237,Raleigh Optical Outfitters,RETAIL,Northeast,30,285000.0,2021-03-07,F. Zamora
+C00238,OpticOptics Optical Retail,RETAIL,Midwest,30,318000.0,2020-09-09,A. Reyes
+C00239,Albany Vision Centers,RETAIL,West,30,274000.0,2018-04-15,B. Quintana
+C00240,TrueVision Vision Centers,RETAIL,Southwest,30,386000.0,2018-07-11,B. Quintana
+C00241,Spokane Vision Stores,RETAIL,Southeast,30,331000.0,2020-01-17,S. Duarte
+C00242,Phoenix Optical Outfitters,RETAIL,Midwest,30,420000.0,2018-05-05,L. Moreno
+C00243,Boise Optical Group,RETAIL,Southwest,30,395000.0,2018-06-08,F. Zamora
+C00244,ClearVision Vision Centers,RETAIL,Midwest,30,431000.0,2021-11-15,P. Ibarra
+C00245,CrystalVision Optical Retail,RETAIL,West,30,320000.0,2024-04-17,S. Duarte
+C00246,Tucson Eyewear Centers,RETAIL,Southeast,30,358000.0,2022-10-22,V. Cardenas
+C00247,Denver Eyewear Collective,RETAIL,West,30,516000.0,2023-02-14,P. Ibarra
+C00248,SummitOptical Vision Centers,RETAIL,Southeast,30,267000.0,2022-05-21,D. Aguilar
+C00249,VistaEye Optical Group,RETAIL,Northeast,30,442000.0,2020-11-16,L. Moreno
+C00250,ApexSight Vision Centers,RETAIL,West,30,369000.0,2022-06-20,P. Ibarra
+C00251,Fargo Eyewear Collective,RETAIL,Southeast,30,505000.0,2021-06-13,N. Espinoza
+C00252,HorizonOptics Optical Group,RETAIL,West,30,399000.0,2019-01-29,D. Aguilar
+C00253,Peoria Optical Retail,RETAIL,West,30,539000.0,2018-09-30,T. Rivas
+C00254,Omaha Optical Outfitters,RETAIL,West,30,427000.0,2018-11-27,A. Reyes
+C00255,HorizonEye Optical Retail,RETAIL,Northeast,30,310000.0,2019-09-21,J. Villalobos
+C00256,Provo Optical Retail,RETAIL,Southwest,30,552000.0,2018-02-02,J. Villalobos
+C00257,HorizonOptics Optical Retail,RETAIL,Northeast,30,328000.0,2023-04-27,G. Montoya
+C00258,Raleigh Optical Outfitters,RETAIL,Midwest,30,341000.0,2023-08-27,P. Ibarra
+C00259,BrightVision Eyewear Centers,RETAIL,Midwest,30,405000.0,2022-05-27,A. Reyes
+C00260,Provo Eyewear Centers,RETAIL,Midwest,30,547000.0,2022-04-12,F. Zamora
+C00261,PrimeSight Optical Group,RETAIL,Northeast,30,278000.0,2023-04-02,P. Ibarra
+C00262,Reno Vision Stores,RETAIL,Southwest,30,274000.0,2020-04-02,T. Rivas
+C00263,BrightVision Eye Care Partners,RETAIL,Southeast,30,381000.0,2021-01-27,S. Duarte
+C00264,Dayton Eyewear Collective,RETAIL,Southwest,30,389000.0,2024-01-07,T. Rivas
+C00265,OpticEye Optical Group,RETAIL,Northeast,30,349000.0,2022-11-05,F. Zamora
+C00266,ApexView Optical Distributors,KEY_ACCOUNT,Midwest,60,7599000.0,2024-01-20,B. Quintana
+C00267,BrightLens National Optical,KEY_ACCOUNT,Southeast,60,6418000.0,2022-09-13,C. Fuentes
+C00268,ApexOptics Optical Partners,KEY_ACCOUNT,Southwest,60,7372000.0,2020-12-15,P. Ibarra
+C00269,ApexLens Optical Partners,KEY_ACCOUNT,Southeast,60,6074000.0,2023-07-26,P. Ibarra
+C00270,CrystalOptical Optical Partners,KEY_ACCOUNT,Southwest,60,7513000.0,2019-11-17,L. Moreno
+C00271,CrystalVision Vision Group International,KEY_ACCOUNT,Southwest,60,8303000.0,2022-02-22,S. Duarte
+C00272,CrystalVision Eyewear Holdings,KEY_ACCOUNT,Northeast,60,7173000.0,2024-04-18,D. Aguilar
+C00273,ClearOptics Optical Distributors,KEY_ACCOUNT,Southwest,60,4910000.0,2018-03-17,S. Duarte
+C00274,FocusOptical Optical Partners,KEY_ACCOUNT,Southeast,60,7914000.0,2020-01-09,B. Quintana
+C00275,PioneerSight National Optical,KEY_ACCOUNT,Midwest,60,7526000.0,2022-04-25,A. Reyes
+C00276,HorizonSight Eyewear Holdings,KEY_ACCOUNT,West,60,5277000.0,2019-01-29,A. Reyes
+C00277,PrimeSight Optical Partners,KEY_ACCOUNT,Southwest,60,6742000.0,2022-06-16,M. Contreras
+C00278,PrimeSight Eyewear Holdings,KEY_ACCOUNT,Northeast,60,9947000.0,2019-04-02,C. Fuentes
+C00279,ClearOptical National Optical,KEY_ACCOUNT,Northeast,60,9172000.0,2023-11-06,T. Rivas
+C00280,ApexVision National Optical,KEY_ACCOUNT,Southeast,60,5203000.0,2024-06-05,M. Contreras
+C00281,BrightView Eyewear Brands,KEY_ACCOUNT,Northeast,60,8933000.0,2022-04-24,M. Contreras
+C00282,OpticVision Optical Partners,KEY_ACCOUNT,West,60,7076000.0,2018-11-25,P. Ibarra
+C00283,TrueSight Optical Partners,KEY_ACCOUNT,Southeast,60,6958000.0,2024-04-28,P. Ibarra
+C00284,CrystalLens National Optical,KEY_ACCOUNT,West,60,6566000.0,2021-05-24,G. Montoya
+C00285,MeridianOptics National Optical,KEY_ACCOUNT,Northeast,60,9825000.0,2018-05-21,C. Fuentes
+C00286,PrimeOptical Eyewear Holdings,KEY_ACCOUNT,Midwest,60,6098000.0,2022-04-11,D. Aguilar
+C00287,PrimeView Optical Distributors,KEY_ACCOUNT,Midwest,60,9022000.0,2021-03-22,C. Fuentes
+C00288,ClearEye Optical Distributors,KEY_ACCOUNT,West,60,9663000.0,2022-11-27,L. Moreno
+C00289,FocusOptical Optical Distributors,KEY_ACCOUNT,Midwest,60,5531000.0,2019-10-11,B. Quintana
+C00290,FocusOptics Eyewear Holdings,KEY_ACCOUNT,Midwest,60,9585000.0,2018-07-30,M. Contreras
+C00291,MeridianOptics Optical Distributors,KEY_ACCOUNT,Southwest,60,6584000.0,2022-08-02,J. Villalobos
+C00292,LumenSight Optical Distributors,KEY_ACCOUNT,Northeast,60,5059000.0,2023-11-20,N. Espinoza
+C00293,HorizonEye Optical Distributors,KEY_ACCOUNT,West,60,9731000.0,2021-05-12,J. Villalobos
+C00294,OpticVision Optical Partners,KEY_ACCOUNT,Midwest,60,6275000.0,2021-06-29,R. Salazar
+C00295,MeridianVision Eyewear Holdings,KEY_ACCOUNT,West,60,6090000.0,2023-01-06,R. Salazar
+C00296,OpticOptical National Optical,KEY_ACCOUNT,Southwest,60,7813000.0,2023-11-04,F. Zamora
+C00297,FocusView Eyewear Brands,KEY_ACCOUNT,Midwest,60,8400000.0,2024-07-19,M. Contreras
+C00298,ClearView Eyewear Brands,KEY_ACCOUNT,Northeast,60,7391000.0,2020-08-12,N. Espinoza
+C00299,SummitOptical Vision Group International,KEY_ACCOUNT,Southeast,60,9303000.0,2024-01-02,D. Aguilar
+C00300,TrueOptics Eyewear Brands,KEY_ACCOUNT,Northeast,60,6928000.0,2019-11-22,V. Cardenas

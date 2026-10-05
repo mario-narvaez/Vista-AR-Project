@@ -1,0 +1,17 @@
+# Private material: never publish this folder or its contents.
+/context of who i am/
+/powerbi/05_visual_build_guide.md
+/powerbi/layouts/
+/.local-backups/
+
+# Temporary PDF printouts.
+*.pdf
+
+# Local Python environment and bytecode.
+.venv/
+__pycache__/
+*.py[cod]
+
+# Local application files.
+.vscode/
+~$*.pbix

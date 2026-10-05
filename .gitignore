@@ -6,6 +6,7 @@
 
 # Temporary PDF printouts.
 *.pdf
+!/powerbi/VISTA-Power_BI_Report_PDF.pdf
 
 # Local Python environment and bytecode.
 .venv/

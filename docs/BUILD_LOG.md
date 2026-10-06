@@ -28,8 +28,6 @@ The generated scenario contains **$3.49B billed**, **$2.88B cash applied** and
 
 ## 2. SQL Server ingestion
 
-**Status: completed locally.**
-
 The schema and loader were executed against `VISTA_AR`. All seven typed-table
 counts match the generated CSVs. The over-application query returned no invoices
 exceeding its **110%** tolerance threshold.
@@ -37,8 +35,6 @@ exceeding its **110%** tolerance threshold.
 ![SQL load results, row counts and over-application check](../screenshots/build/01-sql-load.png)
 
 ## 3. SQL verification and report reconciliation
-
-**Status: completed locally.**
 
 The analytical views and verification script were executed. Selected result
 grids preserve the reference values used to reconcile the Power BI report.
@@ -82,8 +78,6 @@ recorded as unapplied cash.
 
 ## 4. Power BI semantic model
 
-**Status: completed locally.**
-
 The report imports `dim_date`, `customers` and six analytical views:
 `vw_invoice_status`, `vw_cash_application`, `vw_dispute_analysis`,
 `vw_analyst_performance`, `vw_dso_monthly` and `vw_customer_risk`.
@@ -103,9 +97,21 @@ are excluded from the report model.
 
 [Model and DAX specification](../powerbi/04_dax_measures.md)
 
-## 5. Analytical report
+### Technical checkpoints and evidence
 
-**Status: five pages completed and saved locally.**
+| Technical work | Recorded evidence |
+|---|---|
+| Schema constraints, staging and typed conversion | SQL load screenshot and seven matching table counts. |
+| Month-end CTEs and rolling-window DSO calculations | Verification block 4 and the June DSO/BPDSO result grid. |
+| Payment-level aggregation and `CASE` classification | Block 8 and the four mutually exclusive route counts. |
+| Shared dimensions and relationship direction | Import selection and model screenshots above. |
+| DAX filter context and calculation scope | Recorded headline reconciliation and comparison of all 33 saved measure expressions with the specification. |
+
+The [technical overview](../README.md#technical-implementation) embeds selected
+SQL and DAX expressions; the [deep dive](PROJECT_DEEP_DIVE.md) explains their
+design. These checkpoints connect the implementation to the saved evidence.
+
+## 5. Analytical report
 
 The report translates current AR, historical DSO, customer risk, disputes,
 analyst activity and cash-application routes into five analytical pages.
@@ -130,15 +136,7 @@ analyst activity and cash-application routes into five analytical pages.
 
 ![Cash application dashboard](../screenshots/powerbi/05-cash-application.png)
 
-| Deliverable | Purpose |
-|---|---|
-| [Saved Power BI report](../powerbi/VISTA-Power_BI_Report.pbix) | Five-page report and imported model for exploration in Power BI Desktop. |
-| [Report PDF](../powerbi/VISTA-Power_BI_Report_PDF.pdf) | Static export of the five report pages. |
-| [Report walkthrough](https://mario-narvaez.github.io/Vista-AR-Project/) · [MP4 recording](../powerbi/VISTA-Power_BI_Report_Walkthrough.mp4) | One-minute demonstration of page navigation and visual filtering. |
-
-## 6. Interaction design and local QA
-
-**Status: local Power BI QA completed.**
+## 6. Interaction design and validation
 
 Interactions were designed for each page's purpose and model grain.
 
@@ -170,17 +168,20 @@ measure expressions matched the model specification. These checks verify the
 package, saved configuration and calculations; interactive UI checks were not
 repeated during this finalization.
 
-## 7. Final local result
+The five-page PDF was visually reviewed, and the 61-second walkthrough was
+checked for readable report content and filtering examples. The published video
+player was verified for browser playback and seeking.
 
-**Status: completed locally.**
+## 7. Completed implementation
 
-The saved PBIX, generated CSVs, SQL scripts, model and report evidence form the
-completed local VISTA solution. The [README](../README.md) presents its
-dashboards, findings and limitations.
+The completed pipeline turns seven synthetic datasets into nine SQL analytical
+views and a five-page Power BI report with 33 DAX measures. SQL resolves balances,
+historical snapshots and payment classifications; the model and DAX handle
+report grain and filter context. The results were reconciled against SQL
+verification output.
 
-Cash-application eligibility describes potential automation under classification
-rules. The report does not implement a matching engine, dynamic historical aging
-or an AI close assistant.
+Cash-application routes describe eligibility under classification rules.
+The [design roadmap](PROJECT_DEEP_DIVE.md#roadmap) covers planned extensions.
 
 ## Publication
 
@@ -188,17 +189,12 @@ or an AI close assistant.
 
 [Public GitHub repository](https://github.com/mario-narvaez/Vista-AR-Project)
 
-The public repository contains the source scripts, generated synthetic data,
-saved PBIX, five-page PDF export, MP4 walkthrough, public documentation and
-validation evidence. The README links to all three report formats. GitHub Pages
-hosts a browser player for the recording using the same MP4 committed in
-`powerbi/`.
+| Deliverable | Purpose |
+|---|---|
+| [Power BI report](../powerbi/VISTA-Power_BI_Report.pbix) | Five-page interactive report and imported model; requires Power BI Desktop. |
+| [Report PDF](../powerbi/VISTA-Power_BI_Report_PDF.pdf) | Static views of all five report pages. |
+| [Report walkthrough](https://mario-narvaez.github.io/Vista-AR-Project/) | 61-second browser demonstration of navigation and filtering; [download MP4](../powerbi/VISTA-Power_BI_Report_Walkthrough.mp4). |
 
-The PDF was checked across all five pages. The 61-second recording was decoded
-successfully and reviewed for readable report content and filtering examples.
-The current PBIX package passed its archive integrity check and contains all
-five report pages. The original SQL reconciliation evidence is retained.
-
-Private career context and the photo, the visual construction guide and layout
-mockups, report backups and temporary PDF printouts are excluded by the
-repository's ignore rules. CSV line endings are preserved by Git attributes.
+The repository includes the Python generator, synthetic CSVs, SQL scripts,
+complete DAX reference and build evidence. The [README](../README.md) brings
+together the report viewing options, technical examples, findings and limitations.

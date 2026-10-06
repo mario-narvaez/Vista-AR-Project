@@ -14,6 +14,7 @@ reference-query blocks in [04_verify.sql](../sql/04_verify.sql).
 - [Relationships and model configuration](#2-relationships-and-model-configuration)
 - [Calculated columns](#3-calculated-columns)
 - [Measures by home table](#4-measures-by-home-table)
+- [Calculation patterns](#calculation-patterns)
 - [Measure formats](#5-measure-formats)
 - [Completed report pages](#6-completed-report-pages)
 - [Historical aging scope](#7-historical-aging-scope)
@@ -110,8 +111,24 @@ The 33 measures are grouped by their home table. The home table organizes a
 measure in the Fields pane; it does not add a relationship. When rebuilding,
 create each measure separately.
 
-`KEEPFILTERS` intersects a measure's condition with the current selection,
-preventing route/risk/status filters from being silently overwritten.
+### Calculation patterns
+
+Measures evaluate within the filters supplied by slicers, visual rows and model
+relationships. These functions make that context explicit:
+
+| Pattern | Use in VISTA |
+|---|---|
+| `CALCULATE` | Evaluates an expression after applying its required filters. |
+| `KEEPFILTERS` | Intersects open-status, route or risk conditions with the existing selection. |
+| `REMOVEFILTERS` | Clears calendar filters for the current snapshot, or only the route filter for a percentage denominator. |
+| `DIVIDE` | Returns blank for a zero denominator unless an alternative result is specified. |
+| `VAR` and `EOMONTH` | Capture the visible month and calculate its preceding month-end before changing filters. |
+| `HASONEVALUE` | Limits customer scores and analyst rates to their defined grain, avoiding misleading totals. |
+| `ISBLANK` and `COALESCE` | Distinguish missing comparisons or selections from populated selections with zero eligible payments. |
+
+The [README examples](../README.md#dax-and-filter-context) show two complete
+measures alongside their reporting purpose. The [design walkthrough](../docs/PROJECT_DEEP_DIVE.md#power-bi-model-and-report-behavior)
+explains the SQL/DAX boundary and prior-month lookup.
 
 ### 4.1 Current book — vw_invoice_status
 
@@ -155,9 +172,10 @@ SUM ( vw_invoice_status[amount_applied] )
 
 ### 4.2 Historical DSO — vw_dso_monthly
 
-These measures take the last visible month: cards show the latest month by
-default, while a line chart evaluates each month. The view has no customer or
-segment grain, so DSO is company-wide.
+SQL calculates the monthly DSO, BPDSO and CEI values; these DAX measures select
+the last visible month. Cards show the latest month by default, while a line
+chart evaluates each month. The view has no customer or segment grain, so DSO
+is company-wide.
 
 `DSO_measure` distinguishes the measure from the SQL column
 `vw_dso_monthly[dso]`. Visuals and dependent formulas use `[DSO_measure]`;
@@ -227,6 +245,11 @@ RETURN
         "► flat"
     )
 ```
+
+`DSO Previous Month` captures `LastVisibleMonth` before clearing both the
+calendar and monthly-view filters. Clearing only one can leave the prior month
+outside the available context. The explicit month-end condition then retrieves
+its value; `DSO MoM Change` stays blank when either comparison value is missing.
 
 ### 4.3 Customer risk — vw_customer_risk
 
@@ -397,6 +420,11 @@ scenario. They are not measured success rates of a deployed matching engine.
 `Auto-Matchable %` uses `COALESCE` to display 0% for a populated payment
 selection with no eligible payments. It remains blank when the selection has
 no payment rows.
+
+`Payment Route Share %` keeps the selected route in its numerator and removes
+only `application_route` from its denominator. Segment, payment date and quality
+filters remain in both counts, so the result is a share of the current payment
+context rather than the entire dataset.
 
 `Unapplied Cash` by payment month shows the amounts recorded on payments
 received that month. The model cannot reconstruct an outstanding unapplied-cash

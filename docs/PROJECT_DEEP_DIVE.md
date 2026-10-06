@@ -23,11 +23,18 @@ leadership. As Collections Supervisor, I led 15 analysts against a $215M monthly
 target. That experience informed the questions this portfolio project explores;
 the transactions and results below belong entirely to the synthetic scenario.
 
-AI assistance supported the initial project design and documentation. My
-contribution was executing the Python and SQL pipeline locally, building the
-Power BI report, reconciling its outputs with SQL results, and adapting the page
-interactions to the model's grain. The saved report and build evidence document
-that implementation.
+AI assistance supported project planning, implementation guidance and
+documentation. I applied my AR experience to the reporting questions, implemented
+the local SQL pipeline, reviewed the views' joins and calculations, and built the
+Power BI model and report. My work included configuring relationships and DAX
+filter context, adapting visual interactions to each table's grain, and
+reconciling the outputs with SQL evidence.
+
+My [Microsoft SQL Server Professional Certificate](https://www.coursera.org/account/accomplishments/specialization/HKRR92EEHGGD),
+[Microsoft Power BI Data Analyst Professional Certificate](https://www.coursera.org/account/accomplishments/specialization/KOEKJL3RJU6Z)
+and [PL-300 certification](https://learn.microsoft.com/api/credentials/share/en-us/MarioNarvaez-4406/9537260A29A49958?sharingId=A39220D320A13A9F)
+provided the technical foundation for this work. The implemented examples below
+connect relational design, T-SQL and DAX to the AR questions they answer.
 
 ## Synthetic data design
 
@@ -109,18 +116,52 @@ Current aging uses the final invoice date as its reporting cutoff. Historical
 DSO needs a different calculation: an invoice's final open balance cannot show
 what was outstanding before later payments arrived.
 
-The monthly snapshot therefore aggregates applications by invoice and month
-end in a CTE, joins them to invoices issued by that date, and calculates the
-balance remaining at each cutoff. Only balances above $1 enter the monthly
-gross AR total. This is the implemented set-based calculation; its structure
-explains the historical reconstruction without relying on runtime claims.
+The monthly snapshot aggregates applications by invoice and month end before
+joining them to invoices issued by that cutoff. This CTE excerpt preserves one
+balance per invoice and month, avoiding duplicated invoice amounts when an
+invoice has several applications:
 
-The DSO view uses a trailing three-month sales sum through a window function.
-It calculates DSO as AR divided by those sales, multiplied by the number of
-months in the window times **30.4 days**. A full three-month window therefore
-uses **91.2 days**. BPDSO applies the same basis to current AR, and the gap
-expresses past-due exposure in days of sales. `LAG` supplies the prior balance
-used by CEI.
+```sql
+app_cum AS (
+    SELECT a.invoice_id, m.month_end, SUM(a.applied_amount) AS applied_to_date
+    FROM month_ends m
+    JOIN dbo.payment_applications a ON a.applied_date <= m.month_end
+    GROUP BY a.invoice_id, m.month_end
+),
+bal AS (
+    SELECT m.month_end,
+           i.customer_id,
+           i.invoice_id,
+           i.due_date,
+           i.invoice_amount - ISNULL(ac.applied_to_date,0) AS open_amount
+    FROM month_ends m
+    JOIN dbo.invoices i  ON i.invoice_date <= m.month_end
+    LEFT JOIN app_cum ac ON ac.invoice_id = i.invoice_id
+                        AND ac.month_end = m.month_end
+)
+```
+
+`LEFT JOIN` retains invoices with no payment by that cutoff; `ISNULL` treats the
+missing application total as zero. Only balances above $1 enter the subsequent
+monthly gross AR aggregation. These calculations use application history, so
+later payments do not reduce earlier month-end balances.
+
+The DSO view joins monthly sales to the reconstructed balances. Its window
+expressions calculate a rolling denominator without collapsing the monthly rows:
+
+```sql
+SUM(sa.credit_sales) OVER (
+    ORDER BY s.month_end
+    ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+) AS sales_3m,
+LAG(s.ar_balance) OVER (ORDER BY s.month_end) AS ar_balance_prior
+```
+
+The view also counts rows in that same window. DSO is AR divided by trailing
+sales, multiplied by the available month count times **30.4 days**; a full
+three-month window uses **91.2 days**. BPDSO applies the same basis to current AR.
+`LAG` supplies the previous balance for CEI, while `NULLIF` prevents division by
+zero. The resulting DSO gap expresses past-due exposure in days of sales.
 
 The first three months have no opening receivables balance. The report uses
 **April 2025 onward** for the DSO trend. The monthly DSO view aggregates all
@@ -150,7 +191,13 @@ probability of default or a validated weekly workload for 15 analysts.
 
 ### Payment routing and analyst outcomes
 
-Cash routing classifies recorded payment attributes and application counts.
+Cash routing first groups application records by payment, then classifies the
+result with ordered `CASE` conditions. Aggregation keeps one row per payment
+even when cash covers several invoices. CLEAN references with no residual are
+split into single-invoice and batch candidates; PARTIAL references with no
+residual enter assisted review; the remaining cases enter manual research.
+The [README code example](../README.md#technical-implementation) shows the exact
+classification expression.
 
 | Route | Rule | Payments | Share |
 |---|---|---:|---:|
@@ -183,10 +230,30 @@ Current aging measures use `REMOVEFILTERS(dim_date)` to retain the final-date
 snapshot while preserving customer and segment selections. They do not use
 `USERELATIONSHIP` to activate the due-date relationship.
 
-Historical cards select the latest visible month from the monthly DSO view.
-The prior-month measure uses `EOMONTH` and resets date and view filters before
-retrieving the previous month. Customer risk is displayed at customer-ID grain;
-the top-20 worklist uses a visual Top N filter rather than a DAX `TOPN` measure.
+Historical cards select the latest visible month from `vw_dso_monthly`; SQL
+calculates DSO, and DAX selects the value appropriate to the visual. The
+prior-month measure captures the current month before changing its filter context:
+
+```dax
+DSO Previous Month =
+VAR LastVisibleMonth = MAX ( vw_dso_monthly[month_end] )
+VAR PriorMonthEnd = EOMONTH ( LastVisibleMonth, -1 )
+RETURN
+    IF (
+        NOT ISBLANK ( LastVisibleMonth ),
+        CALCULATE (
+            MAX ( vw_dso_monthly[dso] ),
+            REMOVEFILTERS ( dim_date ),
+            REMOVEFILTERS ( vw_dso_monthly ),
+            vw_dso_monthly[month_end] = PriorMonthEnd
+        )
+    )
+```
+
+`EOMONTH` finds the preceding cutoff. Removing calendar and monthly-view filters
+lets `CALCULATE` retrieve that month even when the visible date range excludes it.
+Customer risk remains at customer-ID grain; the top-20 worklist uses a visual
+Top N filter rather than a DAX `TOPN` measure.
 
 The report's interactions follow the available grain:
 

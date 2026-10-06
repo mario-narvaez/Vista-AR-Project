@@ -11,7 +11,7 @@ All three present the same synthetic AR scenario.
 
 ![VISTA Executive dashboard](screenshots/powerbi/01-executive.png)
 
-[GitHub repository](https://github.com/mario-narvaez/Vista-AR-Project) · [Findings](#findings) · [Validation evidence](#validation-evidence)
+[GitHub repository](https://github.com/mario-narvaez/Vista-AR-Project) · [Technical implementation](#technical-implementation) · [Findings](#findings) · [Validation evidence](#validation-evidence)
 
 VISTA answers the three questions a collections manager needs on Monday
 morning:
@@ -30,6 +30,105 @@ VISTA uses synthetic data only, but the business design comes from five years
 in global AR operations across key accounts, managed care, retail collections,
 reconciliation, automation and collections leadership. It turns that operating
 context into a reproducible portfolio project rather than a generic dashboard.
+
+## Technical implementation
+
+The reporting layer contains **nine SQL views and 33 DAX measures**. SQL Server
+handles balances, historical snapshots and classifications; the Power BI model
+and DAX control how those outputs respond to report selections.
+
+### Analytical views
+
+All reporting reads from these views rather than raw transaction tables.
+
+| View | Decision it supports |
+|---|---|
+| [`vw_invoice_status`](sql/03_views.sql) | Current invoice balance, days past due, aging bucket and dispute state |
+| [`vw_ar_aging`](sql/03_views.sql) | Customer-level AR aging |
+| [`vw_ar_snapshot_monthly`](sql/03_views.sql) | AR reconstructed at each month end |
+| [`vw_dso_monthly`](sql/03_views.sql) | Historical DSO, Best Possible DSO, CEI and past-due percentage |
+| [`vw_cash_application`](sql/03_views.sql) | Payment matchability, application route and unapplied cash |
+| [`vw_customer_risk`](sql/03_views.sql) | Customer risk score and weekly worklist |
+| [`vw_dispute_analysis`](sql/03_views.sql) | Dispute value, reason, status and age |
+| [`vw_analyst_performance`](sql/03_views.sql) | Activity, promise-to-pay timing proxy and productive-touch rate |
+| [`vw_exec_kpi`](sql/03_views.sql) | Latest headline metrics for an executive summary |
+
+**Rolling calculations — `vw_dso_monthly`**
+
+This excerpt uses a windowed sum for trailing three-month sales and `LAG` for
+the previous AR balance used by CEI. Monthly balances are reconstructed from
+invoice and application dates before these calculations run.
+
+```sql
+SUM(sa.credit_sales) OVER (
+    ORDER BY s.month_end
+    ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+) AS sales_3m,
+LAG(s.ar_balance) OVER (ORDER BY s.month_end) AS ar_balance_prior
+```
+
+<details>
+<summary>Payment classification — <code>vw_cash_application</code></summary>
+
+Ordered `CASE` conditions distinguish single-invoice and batch matching
+candidates from assisted review and manual research. These are classification
+rules for potential automation.
+
+```sql
+CASE WHEN remittance_quality = 'CLEAN'
+          AND invoices_covered = 1
+          AND unapplied_amount = 0 THEN 'STRAIGHT_THROUGH'
+     WHEN remittance_quality = 'CLEAN'
+          AND invoices_covered > 1
+          AND unapplied_amount = 0 THEN 'AUTO_MATCH_BATCH'
+     WHEN remittance_quality = 'PARTIAL'
+          AND unapplied_amount = 0 THEN 'ASSISTED_REVIEW'
+     ELSE 'MANUAL_RESEARCH'
+END AS application_route
+```
+
+</details>
+
+### DAX and filter context
+
+**Current snapshot — `Current Total AR`**
+
+```dax
+Current Total AR =
+CALCULATE (
+    SUM ( vw_invoice_status[open_amount] ),
+    KEEPFILTERS ( vw_invoice_status[is_settled] = 0 ),
+    REMOVEFILTERS ( dim_date )
+)
+```
+
+`CALCULATE` changes the filter context. `KEEPFILTERS` intersects the open-invoice
+condition with the existing selection; `REMOVEFILTERS(dim_date)` preserves the
+final-date snapshot while retaining customer and segment selections.
+
+<details>
+<summary>Route percentage — <code>Payment Route Share %</code></summary>
+
+```dax
+Payment Route Share % =
+DIVIDE (
+    [Payment Count],
+    CALCULATE (
+        [Payment Count],
+        REMOVEFILTERS ( vw_cash_application[application_route] )
+    )
+)
+```
+
+The numerator retains the selected route. The denominator removes only the route
+filter, keeping segment, date and other payment filters. `DIVIDE` returns blank
+when the denominator is zero.
+
+</details>
+
+See the [SQL design walkthrough](docs/PROJECT_DEEP_DIVE.md#current-balances-and-historical-dso)
+and the [complete DAX reference](powerbi/04_dax_measures.md#4-measures-by-home-table)
+for the full calculations and their scope.
 
 ## Findings
 
@@ -70,22 +169,6 @@ assisted review and manual research make up the **39.9%** human-review share.
 | [Report walkthrough](https://mario-narvaez.github.io/Vista-AR-Project/) | One-minute recording of page navigation and filtering, playable in the browser. | [Download MP4](powerbi/VISTA-Power_BI_Report_Walkthrough.mp4) |
 | [Power BI model and DAX](powerbi/04_dax_measures.md) | Defines the model, relationships, measures and five report pages. | [Execution guide](BUILD_GUIDE.md) |
 | [Build log](docs/BUILD_LOG.md) | Records selected evidence of local execution and validation, without a screenshot for every click. | [Execution guide](BUILD_GUIDE.md) |
-
-## Analytical views
-
-All reporting reads from these views rather than raw transaction tables.
-
-| View | Decision it supports |
-|---|---|
-| [`vw_invoice_status`](sql/03_views.sql) | Current invoice balance, days past due, aging bucket and dispute state |
-| [`vw_ar_aging`](sql/03_views.sql) | Customer-level AR aging |
-| [`vw_ar_snapshot_monthly`](sql/03_views.sql) | AR reconstructed at each month end |
-| [`vw_dso_monthly`](sql/03_views.sql) | Historical DSO, Best Possible DSO, CEI and past-due percentage |
-| [`vw_cash_application`](sql/03_views.sql) | Payment matchability, application route and unapplied cash |
-| [`vw_customer_risk`](sql/03_views.sql) | Customer risk score and weekly worklist |
-| [`vw_dispute_analysis`](sql/03_views.sql) | Dispute value, reason, status and age |
-| [`vw_analyst_performance`](sql/03_views.sql) | Activity, promise-to-pay timing proxy and productive-touch rate |
-| [`vw_exec_kpi`](sql/03_views.sql) | Latest headline metrics for an executive summary |
 
 ## Data design
 
